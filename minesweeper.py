@@ -30,23 +30,28 @@ def output(a):
     for i in range(len(a)):
         print(a[i])
 
-def click(a,b,x,y,z):
+def click(a,b,x,y,z,t):
     if a[x][y]==0:
         print("Game Over")
-        sub(a)
+        sub(t)
     else:
         b[x][y]=a[x][y]
         a[x][y]=0
         output(b)
+        output(a)
         f=0
-        for i in a:
-            for j in a:
-                if 0==a[i][j]:
+        for i in range(len(a)):
+            for j in range(len(a)):
+                if a[i][j]==0:
                     f+=1
+        print(f,z)
         if f==z:
             print("game won")
         else:
-            click(a,b,p=int(input()),q=int(input()))
+            print("Between 1 and ",sa-2)
+            g=int(input("enter position 1"))
+            h=int(input("enter position 2"))
+            click(a,b,g,h,z,t)
 
 
 def table(s):
@@ -88,13 +93,15 @@ while True:
         v=table(sa)
         x=transform(v)
         x=summ(x)
+        z=x
         y=duplicate(sa)
         #sub(x)
         output(y)
+        print("Between 1 and ",sa-2)
         a=int(input("enter position 1"))
         b=int(input("enter position 2"))
-        click(x,y,a,b,sa*sa)
-
-
+        click(x,y,a,b,sa*sa,z)
+    elif s==2:
+        break
 
 
