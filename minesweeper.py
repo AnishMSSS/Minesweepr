@@ -38,7 +38,6 @@ def click(a,b,x,y,z,t):
         b[x][y]=a[x][y]
         a[x][y]=0
         output(b)
-        output(a)
         f=0
         for i in range(len(a)):
             for j in range(len(a)):
